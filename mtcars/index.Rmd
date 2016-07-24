@@ -1,0 +1,60 @@
+---
+title       : Shiny App on Mtcars
+subtitle    : Very first app
+author      : dylan.woon
+job         : novice data explorer
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow     # 
+widgets     : [quiz]            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+ext_widgets : {rCharts: [libraries/nvd3]}
+---
+
+## Why Shiny App on Mtcars?
+
+1. Car is common - anyone can explore the apps and data without prior research
+2. Great data quality - utilizing R's built in datasets
+3. Demonstrate the value of K Means Clustering - when applied tactfully
+
+- Mtcars dataset - https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html
+
+--- 
+
+## Really quick rCharts on mtcars
+
+```{r, echo = F, results = "asis"}
+require(rCharts)
+```
+
+```{r, echo = T, results = "asis"}
+n1 <- nPlot(mpg ~ disp, group = "cyl", type = "multiBarChart", data = mtcars)
+n1$print("chart1")
+```
+
+---
+
+## Can you identify hidden patterns within the app?
+
+- By varying the variables and number of clusters in the Shiny app, certain patterns may be discovered.
+- There's no right or wrong answer
+- It's fine even if no hidden patterns are discovered. Data science is largely about experimentation
+
+--- &radio
+
+## Quiz
+
+Is K Means Clustering used on regression or classification problems?
+
+1. _Classification_ 
+2. Regression
+3. None of above
+
+*** .hint
+Clustering is the task of grouping a set of objects.
+
+*** .explanation
+In machine learning, classification is the used to identify to which of a set of categories a new observation belongs, on the basis of a training set of data with known category membership.
+
+
